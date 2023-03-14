@@ -1,5 +1,15 @@
 <h1 align="center">Actividad #14 - Caso #01</h1>
 <h2 align="center">Universidad de Guadalajara<br>Centro Universitario de Ciencias Exactas e Ingenierías<br>Departamento de Ciencias Computacionales<br>Seminario de Solución de Problemas de Ingeniera de Software 1<h2>
+<p>Profesor: Medellín Serna Luis Antonio <br>
+Sección: D08 <br>
+Calendario: 2023A <br>
+Equipo de alumnos: “Desarrollos y Sistemas AD” <br>
+Alumno: Diaz Raygoza Alejandro <br>
+Código de alumno: 213525382 <br>
+Carrera: Ingeniería Informática <br>
+Alumno: Diaz Nava Adrian <br>
+Código de alumno: 220793457 <br>
+Carrera: Ingeniería Informática<p>
 
 ## Requerimientos
 * `PHP` >= 8.1
