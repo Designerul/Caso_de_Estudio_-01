@@ -1,8 +1,5 @@
 <h1 align="center">Actividad #14 - Caso #01</h1>
-<h2 align="center">Universidad de Guadalajara<h2>
-<h2 align="center">Centro Universitario de Ciencias Exactas e Ingenierías<h2>
-<h2 align="center">Departamento de Ciencias Computacionales<h2>
-<h2 align="center">Seminario de Solución de Problemas de Ingeniera de Software 1</h2>
+<h2 align="center">Universidad de Guadalajara<br>Centro Universitario de Ciencias Exactas e Ingenierías<br>Departamento de Ciencias Computacionales<br>Seminario de Solución de Problemas de Ingeniera de Software 1<h2>
 
 ## Requerimientos
 * `PHP` >= 8.1
