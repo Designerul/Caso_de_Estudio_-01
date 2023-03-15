@@ -10866,6 +10866,12 @@ a:focus {
   background-size: cover;
 }
 
+.bg-login {
+  background: url("https://images.unsplash.com/photo-1636564499112-6113e73c504a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60");
+  background-position: center;
+  background-size: cover;
+}
+
 .bg-register-image {
   background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
   background-position: center;
