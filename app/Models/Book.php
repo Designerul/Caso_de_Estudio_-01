@@ -20,4 +20,24 @@ class Book extends Model
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+
+    /* Relacion uno a muchos inversa de ecuadernacion con libros */
+    public function bookbinding(){
+        return $this->belongsTo('App\Models\Bookbinding');
+    }
+
+    /* Relacion uno a muchos inversa de editorial con libros */
+    public function editorial(){
+        return $this->belongsTo('App\Models\Editorial');
+    }
+
+    /* Relacion uno a muchos inversa de tipo de libros con libros */
+    public function type(){
+        return $this->belongsTo('App\Models\Type');
+    }
+
+    /* Relacion uno a uno inversa de numero de ejemplares con libros */
+    public function number(){
+        return $this->belongsTo('App\Models\Number');
+    }
 }

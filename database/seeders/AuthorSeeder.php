@@ -48,7 +48,7 @@ class AuthorSeeder extends Seeder
             ['id' => 30, 'autor' => 'RICARDO ALCANTARA', 'slug' => 'ricardo_alcantara', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 31, 'autor' => 'GEMMA ELWIN', 'slug' => 'gemma_elwin', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 32, 'autor' => 'JUAN DOMINGO ARGUELLES', 'slug' => 'juan_domingo_arguelles', 'created_at' => now(), 'updated_at' => now()],
-            ['id' => 33, 'autor' => 'ERICH FROMM', 'slug' => 'erich_fromm', 'created_at' => now(), 'updated_at' => now()],
+            ['id' => 33, 'autor' => 'KOMANDER', 'slug' => 'komander', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 34, 'autor' => 'H P LOVECRAFT', 'slug' => 'h_p_lovecraft', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 35, 'autor' => 'HAEMIN SUNIM', 'slug' => 'haemin_sunim', 'created_at' => now(), 'updated_at' => now()],
             ['id' => 36, 'autor' => 'ENRIQUE LASO', 'slug' => 'enrique_laso', 'created_at' => now(), 'updated_at' => now()],
