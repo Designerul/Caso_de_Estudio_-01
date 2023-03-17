@@ -9,7 +9,9 @@ Código de alumno: 213525382 <br>
 Carrera: Ingeniería Informática <br>
 Alumno: Diaz Nava Adrian <br>
 Código de alumno: 220793457 <br>
-Carrera: Ingeniería Informática<p>
+Carrera: Ingeniería Informática<br>
+Proyecto: Tienda de libros (Leer & Leer)
+<p>
 
 ## Requerimientos
 * `PHP` >= 8.1
