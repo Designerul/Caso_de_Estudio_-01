@@ -14,6 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        /* Aqui recupera todas las ventas */
         $buys = Buy::all();
 
         return view('routes.dashboard.index', compact('buys'));
