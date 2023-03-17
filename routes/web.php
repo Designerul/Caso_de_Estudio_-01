@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 require_once __DIR__ . '/fortify.php';
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('index');
-});
+}); */
+
+Route::resource('/', BookController::class);
+Route::get('/filter', [BookController::class, 'filter']);
 
 Route::middleware([
     'auth:sanctum',

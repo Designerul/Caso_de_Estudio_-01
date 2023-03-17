@@ -19,6 +19,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
         <link href= {{ asset('css/app.css') }} rel="stylesheet">
         <link href= {{ asset('css/icons.css') }} rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('plugins/bootstrap-select/dist/css/bootstrap-select.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/intl-tel-input/build/css/intlTelInput.min.css') }}">
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -96,27 +98,31 @@
                                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
                                         {{-- Filtro Autor --}}
                                         <div class="col-3">
-                                            <label for="brandFilter">Autor:</label>
-                                            <select class="form-control" id="" multiple>
-                                                    
+                                            <label for="authorFilter">Autor:</label>
+                                            <select class="form-control" id="authorFilter" multiple>
+                                                @foreach ($authors as $author)
+                                                    <option value="{{ $author->id }}">{{ $author->autor }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         {{-- Filtro Categoria --}}
                                         <div class="col">
-                                            <label for="groupFilter">Categoria:</label>
-                                            <select class="form-control" id="" multiple>
-                                                    
+                                            <label for="categorytFilter">Categoria:</label>
+                                            <select class="form-control" id="categorytFilter" multiple>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->categoria }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         {{-- Filtro de Titulo del libro --}}
                                         <div class="col">
-                                            <label for="concessionaireFilter">Titulo:</label>
-                                            <input class="form-control" type="text" name="concessionaireFilter" id="" style="text-transform: uppercase;">
+                                            <label for="bookFilter">Titulo del libro:</label>
+                                            <input class="form-control" type="text" name="bookFilter" id="bookFilter" style="text-transform: uppercase;">
                                         </div>
                                         {{-- Botón Filtrar --}}
                                         <div class="col">
                                             <br>
-                                            <button type="button" class="btn btn-primary" >
+                                            <button type="button" class="btn btn-primary" onclick="filterData();">
                                                 <i class="bx bx-search me-0"></i>
                                             </button>
                                         </div>
@@ -130,30 +136,10 @@
             </div>
 
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid" id="concessionaires_data">
-
-                {{-- Recuperacion de libro --}}
-                <div class="col">
-					<div class="card">
-
-                        {{-- Recuperacion de portada del libro --}}
-                        <div class="text-center">
-                            <img src="imagenes/9788498/978849838845.jpg" class="card-img-top" alt="..." style="max-height: 400pX; max-width: 300px;">
-                        </div>
-							
-						<div class="card-body">
-							<h5 class="card-title cursor-pointer">El niño en la cima de la montaña</h5>
-                            <h6 class="card-subtitle">JOHN BOYNE</h6>
-							<div class="clearfix">
-								<p class="mb-0 float-start"><strong>134</strong> Vendidos</p>
-								<p class="mb-0 float-end fw-bold"><span>$199.00</span></p>
-							</div>
-						</div>
-
-					</div>
-				</div>
-            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid" id="books_data">
                 
+
+            </div>
             <div class="text-center" id="charging">
                 <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
         
@@ -169,5 +155,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('js/scripts.js')}}"></script>
+        {{-- Scripts --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('plugins/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+        <script src="{{ asset('plugins/intl-tel-input/build/js/intlTelInput.min.js') }}"></script>
+        <script src="{{ asset('plugins/intl-tel-input/build/js/utils.js') }}"></script>
+        <script src="{{ asset('js/books/filter.js') }}"></script>
+        <script src="{{ asset('js/card.js') }}"></script>
     </body>
 </html>
