@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\BuyController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,21 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 require_once __DIR__ . '/fortify.php';
 
-/* Route::get('/', function () {
-    return view('index');
-}); */
-
-Route::resource('/', BookController::class);
-Route::get('/filter', [BookController::class, 'filter']);
+/* Rutas publicas */
+Route::resource('/', HomeController::class)->only(['index']);
+Route::get('/filter', [HomeController::class, 'filter']);
+Route::resource('book', BookController::class)->only(['show']);
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    /* Route::get('/', function() {
-        return view('index');
-    })->name('index'); */
-
+    
+    /* Rutas de ventas */
+    Route::resource('buy', BuyController::class);
     
 });

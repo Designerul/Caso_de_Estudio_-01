@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Author;
 use App\Models\Category;
 
-class BookController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,36 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::where('status', 2)->latest('id');
+        $authors = Author::all()->sortBy('autor');
+        $categories = Category::all()->sortBy('categoria');
+
+        return view('index', compact('books', 'authors', 'categories'));
+    }
+
+    public function filter(Request $request) {
+        $author = $request->get('author');
+        $category = $request->get('category');
+        $book = $request->get('book');
+        $books = Book::all();
+
+        $book = mb_strtoupper($book);
+
+        if($author != null){
+            $books = $books->whereIn('author_id', $author);           
+        }
+
+        if($category != null){
+            $books = $books->whereIn('category_id', $category);           
+        }
+
+        if ($book != null) {
+            $books = Book::whereIn('id', $books->pluck('id'))
+                ->where('titulo', 'LIKE', '%' . mb_strtoupper($book) . '%')
+                ->orderBy('id', 'desc')->get();
+        }
+
+        return view('routes.table', compact('books'));
     }
 
     /**
@@ -50,21 +79,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        $categories = Book::where('category_id', $book->category_id)
-                                ->where('status', 2)
-                                ->where('id', '!=', $book->id)
-                                ->latest('id')
-                                ->take(4)
-                                ->get();
-
-        $authors = Book::where('author_id', $book->author_id)
-                                ->where('status', 2)
-                                ->where('id', '!=', $book->id)
-                                ->latest('id')
-                                ->take(4)
-                                ->get();
-
-        return view('routes.book.show', compact('book', 'categories', 'authors'));
+        //
     }
 
     /**

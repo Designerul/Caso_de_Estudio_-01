@@ -17,6 +17,10 @@
                 <p class="mb-0 float-start"><strong>{{ $book->number->numero_ejemplares }}</strong> Disponibles</p>
                 <p class="mb-0 float-end fw-bold"><span>${{ $book->precio }}</span></p>
             </div>
+            <a href="{{ route('book.show', $book) }}" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Ver">
+                <i class="lni lni-eye"></i>
+                Ver
+            </a>
         </div>
 
     </div>
