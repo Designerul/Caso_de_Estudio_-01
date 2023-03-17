@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BuyController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,8 @@ Route::middleware([
     
     /* Rutas de ventas */
     Route::resource('buy', BuyController::class);
+
+    /* Rutas de administracion */
+    Route::resource('dashboard', DashboardController::class);
     
 });

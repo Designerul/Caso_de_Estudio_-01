@@ -15,7 +15,11 @@ class BuyController extends Controller
      */
     public function index()
     {
-        //
+        $user = auth()->user()->id;
+
+        $buys = Buy::where('user_id', $user)->get();
+
+        return view('routes.buy.index', compact('buys'));
     }
 
     /**
@@ -53,6 +57,16 @@ class BuyController extends Controller
         $buy->status = 1;
 
         $buy->save();
+
+        /* $book = Book::find($request->book_id);
+        $id = $book->number->id;
+
+        $number = Number::find('book_id', $id);
+
+        $ejemplares = $number->numero_ejemplares;
+        $resta = $ejemplares - $cantidad;
+        $number->numero_ejemplares = $resta;
+        $number->save(); */
 
         return redirect()->back();
     }

@@ -40,4 +40,9 @@ class Book extends Model
     public function number(){
         return $this->belongsTo('App\Models\Number');
     }
+
+    /* Relacion uno a muchos de compras con libro */
+    public function buy(){
+        return $this->hasOne('App\Models\Buy');
+    }
 }

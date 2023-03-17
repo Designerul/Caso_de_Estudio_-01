@@ -67,7 +67,6 @@
                         </li>
                     </ul>
 
-                    
                     <a href="{{ route('buy.index') }}">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -93,64 +92,8 @@
         <!-- Section-->
         <div class="page-content">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="align-items-left">
-    
-                                {{-- Inicio de Filtros de libros --}}
-                                <form>
-                                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-                                        {{-- Filtro Autor --}}
-                                        <div class="col-3">
-                                            <label for="authorFilter">Autor:</label>
-                                            <select class="form-control" id="authorFilter" multiple>
-                                                @foreach ($authors as $author)
-                                                    <option value="{{ $author->id }}">{{ $author->autor }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        {{-- Filtro Categoria --}}
-                                        <div class="col">
-                                            <label for="categorytFilter">Categoria:</label>
-                                            <select class="form-control" id="categorytFilter" multiple>
-                                                @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->categoria }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        {{-- Filtro de Titulo del libro --}}
-                                        <div class="col">
-                                            <label for="bookFilter">Titulo del libro:</label>
-                                            <input class="form-control" type="text" name="bookFilter" id="bookFilter" style="text-transform: uppercase;">
-                                        </div>
-                                        {{-- Botón Filtrar --}}
-                                        <div class="col">
-                                            <br>
-                                            <button type="button" class="btn btn-primary" onclick="filterData();">
-                                                <i class="bx bx-search me-0"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                                {{-- Fin de Filtros de libros --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid" id="books_data">
-                
-
-            </div>
-            <div class="text-center" id="charging">
-                <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
-        
-                </div>
-            </div>
+            @yield('section')
+                       
         </div>
 
         <!-- Footer-->
